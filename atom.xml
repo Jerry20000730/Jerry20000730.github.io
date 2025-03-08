@@ -3,11 +3,11 @@
   <title>Tragic Master&#39;s Blog</title>
   
   
-  <link href="http://tragicmaster.github.io/atom.xml" rel="self"/>
+  <link href="http://jerry20000730.github.io/atom.xml" rel="self"/>
   
-  <link href="http://tragicmaster.github.io/"/>
+  <link href="http://jerry20000730.github.io/"/>
   <updated>2025-03-08T13:23:20.434Z</updated>
-  <id>http://tragicmaster.github.io/</id>
+  <id>http://jerry20000730.github.io/</id>
   
   <author>
     <name>Tragic Master</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Go Programming Languages - Extra Settings</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_extra/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_extra/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_extra/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_extra/</id>
     <published>2025-03-08T12:14:25.550Z</published>
     <updated>2025-03-08T13:23:20.434Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="Go" scheme="http://tragicmaster.github.io/tags/Go/"/>
+    <category term="Go" scheme="http://jerry20000730.github.io/tags/Go/"/>
     
   </entry>
   
   <entry>
     <title>CICD流水线搭建流程 [GitLab + Ubuntu]</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/CICD/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/CICD/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/CICD/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/CICD/</id>
     <published>2024-10-27T21:51:49.000Z</published>
     <updated>2024-10-27T21:51:49.000Z</updated>
     
@@ -51,17 +51,17 @@
     
     
     
-    <category term="环境配置" scheme="http://tragicmaster.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="环境配置" scheme="http://jerry20000730.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="CICD" scheme="http://tragicmaster.github.io/tags/CICD/"/>
+    <category term="CICD" scheme="http://jerry20000730.github.io/tags/CICD/"/>
     
   </entry>
   
   <entry>
     <title>部署SSL证书</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/SSLBuild/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/SSLBuild/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/SSLBuild/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/SSLBuild/</id>
     <published>2024-10-27T07:00:47.000Z</published>
     <updated>2024-10-27T07:00:47.000Z</updated>
     
@@ -72,17 +72,17 @@
     
     
     
-    <category term="环境配置" scheme="http://tragicmaster.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="环境配置" scheme="http://jerry20000730.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="SSL" scheme="http://tragicmaster.github.io/tags/SSL/"/>
+    <category term="SSL" scheme="http://jerry20000730.github.io/tags/SSL/"/>
     
   </entry>
   
   <entry>
     <title>最长回文子串问题的解法</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/longest-palindrome/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/longest-palindrome/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/longest-palindrome/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/longest-palindrome/</id>
     <published>2024-10-22T05:19:22.000Z</published>
     <updated>2024-10-22T05:19:22.000Z</updated>
     
@@ -93,17 +93,17 @@
     
     
     
-    <category term="Algorithm" scheme="http://tragicmaster.github.io/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://jerry20000730.github.io/categories/Algorithm/"/>
     
     
-    <category term="Algorithm" scheme="http://tragicmaster.github.io/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="http://jerry20000730.github.io/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>Go Programming Languages - Goroutines</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_goroutine/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_goroutine/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_goroutine/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_goroutine/</id>
     <published>2024-09-03T13:21:01.000Z</published>
     <updated>2024-09-03T13:21:01.000Z</updated>
     
@@ -114,17 +114,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="Go" scheme="http://tragicmaster.github.io/tags/Go/"/>
+    <category term="Go" scheme="http://jerry20000730.github.io/tags/Go/"/>
     
   </entry>
   
   <entry>
     <title>Go Programming Languages - Functional Programming</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_lambda/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_lambda/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_lambda/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_lambda/</id>
     <published>2024-09-03T12:46:13.000Z</published>
     <updated>2024-09-03T12:46:13.000Z</updated>
     
@@ -135,17 +135,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="Go" scheme="http://tragicmaster.github.io/tags/Go/"/>
+    <category term="Go" scheme="http://jerry20000730.github.io/tags/Go/"/>
     
   </entry>
   
   <entry>
     <title>【C++】C++11 互斥量解决多线程数据共享问题</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading2/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading2/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading2/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading2/</id>
     <published>2024-09-02T15:18:56.000Z</published>
     <updated>2024-09-02T15:18:56.000Z</updated>
     
@@ -156,17 +156,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="C++ Multithreading" scheme="http://tragicmaster.github.io/tags/C-Multithreading/"/>
+    <category term="C++ Multithreading" scheme="http://jerry20000730.github.io/tags/C-Multithreading/"/>
     
   </entry>
   
   <entry>
     <title>【C++】C++11 Thread线程库的基本使用</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading1/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading1/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading1/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/multi-threading1/</id>
     <published>2024-09-02T15:10:31.000Z</published>
     <updated>2024-09-02T15:10:31.000Z</updated>
     
@@ -177,17 +177,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="C++ Multithreading" scheme="http://tragicmaster.github.io/tags/C-Multithreading/"/>
+    <category term="C++ Multithreading" scheme="http://jerry20000730.github.io/tags/C-Multithreading/"/>
     
   </entry>
   
   <entry>
     <title>【C++】如何在C++中实现单例模式</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/singleton/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/singleton/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/singleton/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/singleton/</id>
     <published>2024-09-02T15:02:49.000Z</published>
     <updated>2024-09-02T15:02:49.000Z</updated>
     
@@ -198,17 +198,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="C++ singleton" scheme="http://tragicmaster.github.io/tags/C-singleton/"/>
+    <category term="C++ singleton" scheme="http://jerry20000730.github.io/tags/C-singleton/"/>
     
   </entry>
   
   <entry>
     <title>Hexo搭建网站</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/HexoBuild/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/HexoBuild/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/HexoBuild/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/HexoBuild/</id>
     <published>2024-08-04T08:32:28.000Z</published>
     <updated>2024-08-04T08:32:28.000Z</updated>
     
@@ -219,17 +219,17 @@
     
     
     
-    <category term="环境配置" scheme="http://tragicmaster.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="环境配置" scheme="http://jerry20000730.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="Hexo" scheme="http://tragicmaster.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="http://jerry20000730.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Go Programming Languages - OOP</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_object/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_object/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_object/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_object/</id>
     <published>2024-06-01T16:49:48.000Z</published>
     <updated>2024-06-01T16:49:48.000Z</updated>
     
@@ -240,17 +240,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="Go" scheme="http://tragicmaster.github.io/tags/Go/"/>
+    <category term="Go" scheme="http://jerry20000730.github.io/tags/Go/"/>
     
   </entry>
   
   <entry>
     <title>Go Programming Languages - Fundamentals</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/</id>
     <published>2024-04-27T20:56:47.000Z</published>
     <updated>2024-04-27T20:56:47.000Z</updated>
     
@@ -261,17 +261,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="Go" scheme="http://tragicmaster.github.io/tags/Go/"/>
+    <category term="Go" scheme="http://jerry20000730.github.io/tags/Go/"/>
     
   </entry>
   
   <entry>
     <title>COMP3052 Computer Security 5 -- Firewall</title>
-    <link href="http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/"/>
-    <id>http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/</id>
+    <link href="http://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/"/>
+    <id>http://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/</id>
     <published>2024-03-31T20:54:51.000Z</published>
     <updated>2024-03-31T20:54:51.000Z</updated>
     
@@ -282,17 +282,17 @@
     
     
     
-    <category term="COMP3052 Computer Security" scheme="http://tragicmaster.github.io/categories/COMP3052-Computer-Security/"/>
+    <category term="COMP3052 Computer Security" scheme="http://jerry20000730.github.io/categories/COMP3052-Computer-Security/"/>
     
     
-    <category term="COMP3052 Computer Security" scheme="http://tragicmaster.github.io/tags/COMP3052-Computer-Security/"/>
+    <category term="COMP3052 Computer Security" scheme="http://jerry20000730.github.io/tags/COMP3052-Computer-Security/"/>
     
   </entry>
   
   <entry>
     <title>腾讯2024暑期实习笔试</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/tencent/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/tencent/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/tencent/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/tencent/</id>
     <published>2024-03-31T19:56:54.000Z</published>
     <updated>2024-03-31T19:56:54.000Z</updated>
     
@@ -303,17 +303,17 @@
     
     
     
-    <category term="OA" scheme="http://tragicmaster.github.io/categories/OA/"/>
+    <category term="OA" scheme="http://jerry20000730.github.io/categories/OA/"/>
     
     
-    <category term="Tencent" scheme="http://tragicmaster.github.io/tags/Tencent/"/>
+    <category term="Tencent" scheme="http://jerry20000730.github.io/tags/Tencent/"/>
     
   </entry>
   
   <entry>
     <title>Git: How to do pre-commit</title>
-    <link href="http://tragicmaster.github.io/wiki/Git/git_tip1/"/>
-    <id>http://tragicmaster.github.io/wiki/Git/git_tip1/</id>
+    <link href="http://jerry20000730.github.io/wiki/Git/git_tip1/"/>
+    <id>http://jerry20000730.github.io/wiki/Git/git_tip1/</id>
     <published>2024-02-14T22:47:40.000Z</published>
     <updated>2024-02-14T22:47:40.000Z</updated>
     
@@ -324,17 +324,17 @@
     
     
     
-    <category term="Git" scheme="http://tragicmaster.github.io/categories/Git/"/>
+    <category term="Git" scheme="http://jerry20000730.github.io/categories/Git/"/>
     
     
-    <category term="git" scheme="http://tragicmaster.github.io/tags/git/"/>
+    <category term="git" scheme="http://jerry20000730.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>COMP3052 Computer Security 4 -- Access Control</title>
-    <link href="http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS6/"/>
-    <id>http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS6/</id>
+    <link href="http://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS6/"/>
+    <id>http://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS6/</id>
     <published>2024-02-13T02:00:39.000Z</published>
     <updated>2024-02-13T02:00:39.000Z</updated>
     
@@ -345,17 +345,17 @@
     
     
     
-    <category term="COMP3052 Computer Security" scheme="http://tragicmaster.github.io/categories/COMP3052-Computer-Security/"/>
+    <category term="COMP3052 Computer Security" scheme="http://jerry20000730.github.io/categories/COMP3052-Computer-Security/"/>
     
     
-    <category term="COMP3052 Computer Security" scheme="http://tragicmaster.github.io/tags/COMP3052-Computer-Security/"/>
+    <category term="COMP3052 Computer Security" scheme="http://jerry20000730.github.io/tags/COMP3052-Computer-Security/"/>
     
   </entry>
   
   <entry>
     <title>Tips when defining global constant in header file</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/const/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/const/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/const/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/C++/const/</id>
     <published>2024-02-12T06:03:33.000Z</published>
     <updated>2024-02-12T06:03:33.000Z</updated>
     
@@ -366,17 +366,17 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="C++" scheme="http://tragicmaster.github.io/tags/C/"/>
+    <category term="C++" scheme="http://jerry20000730.github.io/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>About master theorem</title>
-    <link href="http://tragicmaster.github.io/wiki/Algorithm/master_theorem/"/>
-    <id>http://tragicmaster.github.io/wiki/Algorithm/master_theorem/</id>
+    <link href="http://jerry20000730.github.io/wiki/Algorithm/master_theorem/"/>
+    <id>http://jerry20000730.github.io/wiki/Algorithm/master_theorem/</id>
     <published>2024-02-11T08:16:01.000Z</published>
     <updated>2024-02-11T08:16:01.000Z</updated>
     
@@ -387,17 +387,17 @@
     
     
     
-    <category term="Algorithm" scheme="http://tragicmaster.github.io/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://jerry20000730.github.io/categories/Algorithm/"/>
     
     
-    <category term="Algorithm" scheme="http://tragicmaster.github.io/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="http://jerry20000730.github.io/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>Multi Domain With Different Reverse Proxy</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/MultiDomain/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/MultiDomain/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/MultiDomain/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/MultiDomain/</id>
     <published>2024-02-07T04:08:31.000Z</published>
     <updated>2024-02-07T04:08:31.000Z</updated>
     
@@ -408,17 +408,17 @@
     
     
     
-    <category term="环境配置" scheme="http://tragicmaster.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="环境配置" scheme="http://jerry20000730.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="Nginx" scheme="http://tragicmaster.github.io/tags/Nginx/"/>
+    <category term="Nginx" scheme="http://jerry20000730.github.io/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>C# 基础 - 面向对象</title>
-    <link href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/CSharp/CSharpOOP/"/>
-    <id>http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/CSharp/CSharpOOP/</id>
+    <link href="http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/CSharp/CSharpOOP/"/>
+    <id>http://jerry20000730.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/CSharp/CSharpOOP/</id>
     <published>2023-10-18T04:30:11.000Z</published>
     <updated>2023-10-18T04:30:11.000Z</updated>
     
@@ -429,10 +429,10 @@
     
     
     
-    <category term="Programming Languages" scheme="http://tragicmaster.github.io/categories/Programming-Languages/"/>
+    <category term="Programming Languages" scheme="http://jerry20000730.github.io/categories/Programming-Languages/"/>
     
     
-    <category term="C#" scheme="http://tragicmaster.github.io/tags/C/"/>
+    <category term="C#" scheme="http://jerry20000730.github.io/tags/C/"/>
     
   </entry>
   
