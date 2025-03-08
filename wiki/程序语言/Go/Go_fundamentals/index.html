@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Go Programming Languages - Fundamentals - Tragic Master&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Tragic Master&#039;s Blog"><meta name="msapplication-TileImage" content="img/favicon3.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tragic Master&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Go programming language is a grammar-sensitive language, meaning that the language attached great importance on grammar. Go supports gabbage collection. Go does not support inheritance and overloading"><meta property="og:type" content="blog"><meta property="og:title" content="Go Programming Languages - Fundamentals"><meta property="og:url" content="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/"><meta property="og:site_name" content="Tragic Master&#039;s Blog"><meta property="og:description" content="Go programming language is a grammar-sensitive language, meaning that the language attached great importance on grammar. Go supports gabbage collection. Go does not support inheritance and overloading"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://tragicmaster.github.io/images/ProgrammingLanguages/Go/cover.svg"><meta property="article:published_time" content="2024-04-27T20:56:47.000Z"><meta property="article:modified_time" content="2024-04-27T20:56:47.000Z"><meta property="article:author" content="Tragic Master"><meta property="article:tag" content="Go"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://tragicmaster.github.io/images/ProgrammingLanguages/Go/cover.svg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/"},"headline":"Go Programming Languages - Fundamentals","image":[],"datePublished":"2024-04-27T20:56:47.000Z","dateModified":"2024-04-27T20:56:47.000Z","author":{"@type":"Person","name":"Tragic Master"},"publisher":{"@type":"Organization","name":"Tragic Master's Blog","logo":{"@type":"ImageObject","url":"http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/img/logo1.svg"}},"description":"Go programming language is a grammar-sensitive language, meaning that the language attached great importance on grammar. Go supports gabbage collection. Go does not support inheritance and overloading"}</script><link rel="canonical" href="http://tragicmaster.github.io/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/"><link rel="icon" href="/img/favicon3.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Tragic Master's Blog" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo1.svg" alt="Tragic Master&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/ProgrammingLanguages/Go/cover.svg" alt="Go Programming Languages - Fundamentals"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time datetime="2024-04-27T20:56:47.000Z" title="2024/4/28 04:56:47">2024-04-28</time></span><span class="level-item"><a class="link-muted" href="/categories/Programming-Languages/">Programming Languages</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Go Programming Languages - Fundamentals</h1><div class="content"><h2 id="table-of-contents">Table of Contents</h2>
+<!-- toc -->
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#environment-variable">Environment Variable</a></li>
+<li><a href="#basic-command">Basic Command</a></li>
+<li><a href="#go-fundamentals">Go Fundamentals</a>
+<ul>
+<li><a href="#hello-world">Hello World</a></li>
+<li><a href="#input-from-stdin">Input from stdin</a></li>
+<li><a href="#variable">Variable</a>
+<ul>
+<li><a href="#initialization">Initialization</a></li>
+<li><a href="#explicit-conversion---------">Explicit conversion
+(强制类型转换)</a></li>
+</ul></li>
+<li><a href="#type">Type</a>
+<ul>
+<li><a href="#basic-types">Basic Types</a></li>
+</ul></li>
+<li><a href="#constant">Constant</a>
+<ul>
+<li><a href="#initialization">Initialization</a></li>
+<li><a href="#enum--no-enum-explicitly-in-go-">Enum (No enum explicitly
+in Go)</a></li>
+</ul></li>
+<li><a href="#condition-statement">Condition Statement</a>
+<ul>
+<li><a href="#for-loop">For loop</a></li>
+</ul></li>
+<li><a href="#if-else">If/else</a></li>
+<li><a href="#switch">Switch</a></li>
+<li><a href="#array">Array</a>
+<ul>
+<li><a href="#initialzation">Initialzation</a></li>
+<li><a href="#iterate-over-array">iterate over array</a></li>
+<li><dl>
+<dt><a href="#slices">Slices</a></dt>
+<dd>
+<a href="#difference-between-slice-and-array">Difference between slice
+and array</a>
+</dd>
+<dd>
+<a href="#iterating-over-slice">Iterating over slice</a>
+</dd>
+</dl></li>
+</ul></li>
+<li><a href="#map">Map</a>
+<ul>
+<li><a href="#create-a-map">Create a map</a></li>
+<li><a href="#traversing-the-map--using-range-">Traversing the map
+(using range)</a></li>
+<li><a href="#get-element">Get Element</a></li>
+<li><a href="#delete-element">Delete Element</a></li>
+<li><a href="#map-s-key">Map's Key</a></li>
+</ul></li>
+<li><a href="#functions-in-go">Functions in Go</a>
+<ul>
+<li><a href="#typical-function">Typical Function</a></li>
+<li><a href="#multiple-returns">Multiple Returns</a></li>
+<li><a href="#named-returns">Named Returns</a></li>
+<li><a href="#variadic-functions">Variadic Functions</a></li>
+<li><a href="#defer-keyword">Defer Keyword</a></li>
+<li><a href="#type-function-and-returning-functions">Type Function and
+Returning Functions</a></li>
+<li><a href="#receiver">Receiver</a></li>
+</ul></li>
+<li><a href="#pointers">Pointers</a></li>
+<li><a href="#pass-by-value---pass-by-reference">Pass by value &amp;
+Pass by reference</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+<!-- tocstop -->
+<!-- - [Overview](#overview)
+- [Environment Variable](#environment-variable)
+- [Basic Command](#basic-command)
+- [Go Fundamentals](#go-fundamentals)
+  - [Hello World](#hello-world)
+  - [Input from stdin](#input-from-stdin)
+  - [Variable](#variable)
+    - [Initialization](#initialization)
+  - [Type](#type)
+      - [Basic Types](#basic-types)
+  - [Constant](#constant)
+    - [Initialization](#initialization-1)
+  - [Condition Statement](#condition-statement)
+    - [For loop](#for-loop)
+  - [If/else](#ifelse)
+  - [Switch](#switch)
+  - [Array](#array)
+    - [Initialzation](#initialzation)
+    - [Slices](#slices)
+      - [Difference between slice and array:](#difference-between-slice-and-array)
+      - [Iterating over slice:](#iterating-over-slice)
+  - [Functions in Go](#functions-in-go)
+    - [Typical Function](#typical-function)
+    - [Multiple Returns](#multiple-returns)
+    - [Named Returns](#named-returns)
+    - [Variadic Functions](#variadic-functions)
+    - [Defer Keyword](#defer-keyword)
+    - [Type Function and Returning Functions](#type-function-and-returning-functions)
+    - [Receiver](#receiver)
+  - [Pointers](#pointers)
+  - [Pass by value & Pass by reference](#pass-by-value--pass-by-reference) -->
+<h1 id="overview">Overview</h1>
+<p>The go programming language has the features in C, Java and Python.
+Go programming language is a grammar-sensitive language, meaning that
+the language attached great importance on grammar. Go supports gabbage
+collection. Go does not support inheritance and overloading, but
+supports interface. Go supports concurrency. Go does not support
+casting. Go does not support <em>assert (third-party packages
+available)</em>, Go does not support static variable.</p>
+<h1 id="environment-variable">Environment Variable</h1>
+<ol type="1">
+<li><code>GOROOT</code>: the place where you install the Go</li>
+<li><code>GOPATH</code>: the place where you store the source code
+<ol type="1">
+<li>src: source code</li>
+<li>pkg: dependent package</li>
+</ol></li>
+<li>国内用户建议设置goproxy: export GOPROXY=https://goproxy.cn</li>
+</ol>
+<h1 id="basic-command">Basic Command</h1>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th><strong><em>command</em></strong></th>
+<th><strong><em>content</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bug</td>
+<td>start a bug report</td>
+</tr>
+<tr>
+<td>build</td>
+<td>compile packages and dependencies</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>remove object files and cached files</td>
+</tr>
+<tr>
+<td>doc</td>
+<td>show documentation for package or symbol</td>
+</tr>
+<tr>
+<td>env</td>
+<td>print Go environment information</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>update packages to use new APIs</td>
+</tr>
+<tr>
+<td>fmt</td>
+<td>gofmt (reformat) package sources</td>
+</tr>
+<tr>
+<td>generate</td>
+<td>generate Go files by processing source</td>
+</tr>
+<tr>
+<td>get</td>
+<td>add dependencies to current module and install them</td>
+</tr>
+<tr>
+<td>install</td>
+<td>compile and install packages and dependencies</td>
+</tr>
+<tr>
+<td>list</td>
+<td>list packages or modules</td>
+</tr>
+<tr>
+<td>mod</td>
+<td>module maintenance</td>
+</tr>
+<tr>
+<td>run</td>
+<td>compile and run Go program</td>
+</tr>
+<tr>
+<td>test</td>
+<td>test packages (go test will scan for all files ending with
+*_test.go, so put test and src files together)</td>
+</tr>
+<tr>
+<td>tool</td>
+<td>run specified go tool</td>
+</tr>
+<tr>
+<td>version</td>
+<td>print Go version</td>
+</tr>
+<tr>
+<td>vet</td>
+<td>report likely mistakes in packages</td>
+</tr>
+</tbody>
+</table>
+<h1 id="go-fundamentals">Go Fundamentals</h1>
+<h2 id="hello-world">Hello World</h2>
+<p>The first and foremost thing for a programming language is to
+understand the basic hello_world.go <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> Three things to
+notice:</p>
+<ul>
+<li><code>package main</code>indicates where the package is in, this is
+the entry point for go programs
+<ul>
+<li>There is only one main function in one package</li>
+</ul></li>
+<li><code>import "fmt"</code>indicates importing a package</li>
+<li><code>func main</code> like many other languages, the main function
+<ul>
+<li>However, the main does not need input arguments - like Python</li>
+<li>uses <code>os.Args</code>to obtain arguments</li>
+</ul></li>
+</ul>
+<h2 id="input-from-stdin">Input from stdin</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//take input like scanf in C</span></span><br><span class="line">_, err = fmt.Scanf(<span class="string">&quot;%d %s&quot;</span>, &amp;x, &amp;y)</span><br><span class="line">fmt.Println(<span class="string">&quot;You Entered x:&quot;</span>, x, <span class="string">&quot; and y: &quot;</span>, y, <span class="string">&quot; Error: &quot;</span>, err)</span><br><span class="line"></span><br><span class="line"><span class="comment">//take input like cin &gt;&gt; in c++</span></span><br><span class="line"><span class="keyword">var</span> x <span class="type">int</span> = <span class="number">1337</span></span><br><span class="line"><span class="keyword">var</span> y <span class="type">string</span> = <span class="string">&quot;string value&quot;</span></span><br><span class="line"></span><br><span class="line">_, err := fmt.Scan(&amp;x, &amp;y)</span><br><span class="line">fmt.Println(<span class="string">&quot;You Entered x:&quot;</span>, x, <span class="string">&quot; and y: &quot;</span>, y, <span class="string">&quot; Error: &quot;</span>, err)</span><br><span class="line"></span><br><span class="line"><span class="comment">//take input with white spaces</span></span><br><span class="line"><span class="keyword">var</span> z <span class="type">string</span> = <span class="string">&quot;string&quot;</span></span><br><span class="line"></span><br><span class="line">scanner := bufio.NewScanner(os.Stdin)</span><br><span class="line">scanner.Scan()</span><br><span class="line">z = scanner.Text()</span><br><span class="line">fmt.Println(<span class="string">&quot;You Entered z:&quot;</span>, z)</span><br></pre></td></tr></table></figure>
+<h2 id="variable">Variable</h2>
+<h3 id="initialization">Initialization</h3>
+<p>There are two ways to define a variable</p>
+<ul>
+<li><p>Implicitly initialize <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="type">int</span></span><br><span class="line"><span class="comment">// equivalent to var a int = 0</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Define initial value but without stating the variable type
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Define initial value plus variable type <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="type">int</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>(new) convenient way without var <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">1</span></span><br><span class="line"><span class="comment">// equivalent to var a := 1</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>使用<code>var()</code>集中定义变量 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    a <span class="type">int</span></span><br><span class="line">    b <span class="type">string</span></span><br><span class="line">    c []<span class="type">float32</span></span><br><span class="line">    d <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">bool</span></span><br><span class="line">    e <span class="keyword">struct</span> &#123;</span><br><span class="line">        x <span class="type">int</span></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p></li>
+<li><p>编译器智能决定变量 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// only can be used in a function</span></span><br><span class="line"><span class="keyword">var</span> a, b, i, s1, s2 = <span class="literal">true</span>, <span class="literal">false</span>, <span class="number">3</span>, <span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span></span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<h3 id="explicit-conversion-强制类型转换">Explicit conversion
+(强制类型转换)</h3>
+<ul>
+<li>Go中，类型转换是强制的（没有隐式转换） <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b <span class="type">int</span> = <span class="number">3</span>, <span class="number">4</span></span><br><span class="line"><span class="comment">// wrong, math.Sqrt returns float64</span></span><br><span class="line"><span class="comment">// also, a * a + b * b is int, not float64</span></span><br><span class="line"><span class="keyword">var</span> c <span class="type">int</span> = math.Sqrt(a * a + b * b)</span><br><span class="line"><span class="comment">// correct, must explicitly convert</span></span><br><span class="line"><span class="keyword">var</span> c <span class="type">int</span> = <span class="type">int</span>(math.Sqrt(<span class="type">float64</span>(a*a + b*b)))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="type">Type</h2>
+<h3 id="basic-types">Basic Types</h3>
+<ol type="1">
+<li><code>bool</code></li>
+<li><code>string</code></li>
+<li><code>int</code>,<code>int8</code>,<code>int16</code>,<code>int32</code>,<code>int64</code>,<code>uint</code>,<code>uint8</code>,<code>uint16</code>,<code>uint32</code>,<code>uint64</code></li>
+<li><code>byte</code> // alias for <code>uint8</code></li>
+<li><code>rune</code> // char in java, alias for <code>int32</code>
+<ul>
+<li>official：rune is an alias for int32 and is equivalent to int32 in
+all ways. It is used, by convention, to distinguish character values
+from integer values.</li>
+</ul></li>
+<li><code>float32</code>, <code>float64</code></li>
+<li><code>complex64</code>, <code>complex128</code></li>
+</ol>
+<h2 id="constant">Constant</h2>
+<h3 id="initialization-1">Initialization</h3>
+<ol type="1">
+<li><p>Full version <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a <span class="type">int</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Without stating the type <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">1</span></span><br></pre></td></tr></table></figure> In Go programming
+language, the initialization cannot be like the following:
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a <span class="type">int</span> <span class="comment">// not legal</span></span><br><span class="line">a = <span class="number">1</span> <span class="comment">// not legal</span></span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h3 id="enum-no-enum-explicitly-in-go">Enum (No enum explicitly in
+Go)</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  cpp = <span class="number">1</span></span><br><span class="line">  java = <span class="number">2</span></span><br><span class="line">  python = <span class="number">3</span></span><br><span class="line">  golang = <span class="number">4</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>For simplicity, we can use <code>iota</code> keyword for auto
+increment <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  cpp = <span class="literal">iota</span></span><br><span class="line">  java</span><br><span class="line">  python</span><br><span class="line">  golang</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>For more advanced usage: <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// e.g., we want to create b, kb, mb, gb, tb, pb...</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  b = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</span><br><span class="line">  kb</span><br><span class="line">  mb</span><br><span class="line">  gb</span><br><span class="line">  tb</span><br><span class="line">  pb</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<h2 id="condition-statement">Condition Statement</h2>
+<h3 id="for-loop">For loop</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> j:=<span class="number">1</span> ; j&lt;<span class="number">10</span> ; j++ &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;j&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>here <code>j:=1</code>is the alias for <code>var int j = 1</code> In
+java, the type can be written in the for loop condition <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">	<span class="comment">// statement here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+For go, it does not allow type to be written in the condition, but you
+can use more stupid way of declaring the variable <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">var</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> j=<span class="number">1</span>; j&lt;<span class="number">10</span>; j++ &#123;</span><br><span class="line">    <span class="comment">// statement here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> Also,
+for go, <strong>there is no <code>**while**</code> statement</strong>,
+meaning that if you want to do while statement, the way to do that is to
+limit the condition to just one: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">var</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> j &lt; <span class="number">10</span> &#123;</span><br><span class="line">    <span class="comment">//statement here</span></span><br><span class="line">	j = j + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> Others:
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">var</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="comment">// infinite loop</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="comment">//statement here</span></span><br><span class="line">	j = j + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> j &gt;= <span class="number">10</span> &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">        </span><br></pre></td></tr></table></figure></p>
+<p>For also allowed for three ways that substitute the
+<code>while</code></p>
+<ol type="1">
+<li><p>ignore initial state <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">convertToBin</span><span class="params">(v <span class="type">int</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">  result := <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="keyword">for</span> ; v &gt; <span class="number">0</span> ; v /= <span class="number">2</span> &#123;</span><br><span class="line">    result = strconv.Itoa(v % <span class="number">2</span>) + result</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>ignore initial and final state <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> scanner.Scan() &#123;</span><br><span class="line">  fmt.Println(scanner.Text())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>ignore initial and final state, and update condition
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// equals to while (true)</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;abc&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="ifelse">If/else</h2>
+<p>Similar to most of the language, with a few exceptions:</p>
+<ol type="1">
+<li>Can exclude <code>()</code>, but cannot exclude <code>&#123;&#125;</code>, the
+left bracket <code>&#123;</code> must be on the same line with
+<code>if</code> statement</li>
+<li><strong>Go doesn't have Ternary Operator ( x &lt; 0 ? A : B
+)</strong></li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">  <span class="string">&quot;fmt&quot;</span></span><br><span class="line">  <span class="string">&quot;io/iotuil&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> filename = <span class="string">&quot;abc.txt&quot;</span></span><br><span class="line">  <span class="comment">// normal way</span></span><br><span class="line">  contents, err := ioutil.ReadFile(filename)</span><br><span class="line">  <span class="keyword">if</span> (err != <span class="literal">nil</span>) &#123;</span><br><span class="line">    fmt.Println(err)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, contents)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Another way to write this would be:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">  <span class="string">&quot;fmt&quot;</span></span><br><span class="line">  <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> filename = <span class="string">&quot;abc.txt&quot;</span></span><br><span class="line">  <span class="comment">// equivalent to contents, err := ioutil.ReadFile(filename)</span></span><br><span class="line">  <span class="comment">// if (err != nil) &#123;</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">if</span> contents, err := ioutil.ReadFile(filename); err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Println(err)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, contents)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="switch">Switch</h2>
+<p>Switch statements in go propgramming language doesn't require break;
+they will break by default, fallthrough keyword used to go to NEXT
+statement even if condition doesn't match, <code>fallthrough</code> is
+like a continue so statement that after it will also executed. however a
+workaround is to use <code>labels</code> and <code>goto</code>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> var1 &#123;</span><br><span class="line">    <span class="keyword">case</span> var1:</span><br><span class="line">    <span class="keyword">case</span> var2:</span><br><span class="line">        <span class="keyword">fallthrough</span></span><br><span class="line">    <span class="keyword">case</span> var3:</span><br><span class="line">        f()</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> Example: <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">eval</span><span class="params">(a, b <span class="type">int</span>, op <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">  <span class="keyword">var</span> result <span class="type">int</span></span><br><span class="line">  <span class="keyword">switch</span> op &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&quot;+&quot;</span>:</span><br><span class="line">    result = a + b</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&quot;-&quot;</span>:</span><br><span class="line">    result = a - b</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&quot;*&quot;</span>:</span><br><span class="line">    result = a * b</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&quot;/&quot;</span>:</span><br><span class="line">    result = a / b</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">&quot;unsupported operator:&quot;</span> + op)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Note:</p>
+<ol type="1">
+<li><p>Switch will automatically "break" (we do not need to write
+break)</p></li>
+<li><p><code>fallthrough</code> = continue running the following code
+without breaking</p></li>
+</ol>
+<h2 id="array">Array</h2>
+<h3 id="initialzation">Initialzation</h3>
+<p>ways of declaring initialization <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// first one</span></span><br><span class="line"><span class="keyword">var</span> a [<span class="number">3</span>] <span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> balance [<span class="number">10</span>] float32</span><br><span class="line">arr2 := [<span class="number">3</span>]<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>&#125;</span><br><span class="line">arr3 := [...]<span class="type">int</span>&#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// two-dimension</span></span><br><span class="line"><span class="keyword">var</span> x [<span class="number">3</span>][<span class="number">2</span>] <span class="type">int</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="iterate-over-array">iterate over array</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// first method</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i&lt;<span class="built_in">len</span>(arr3); i++ &#123;</span><br><span class="line">  fmt.Println(arr3[i])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// second method: using range</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="keyword">range</span> arr3 &#123;</span><br><span class="line">  fmt.Println(arr3[i])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if we want to directly access the value</span></span><br><span class="line"><span class="keyword">for</span> i, v := <span class="keyword">range</span> arr3 &#123;</span><br><span class="line">  fmt.Println(i, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="slices">Slices</h3>
+<p>Slices are of dynamic size <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">letters := []<span class="type">string</span>&#123;<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;d&quot;</span>&#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*  using make -&gt; make([]T, len, cap) */</span></span><br><span class="line"><span class="keyword">var</span> s []<span class="type">byte</span></span><br><span class="line">s = <span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">5</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment">//OR</span></span><br><span class="line">s := <span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// both equiavlent to: s == []byte&#123;0, 0, 0, 0, 0&#125;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>左开右闭</li>
+<li>A slice does not store any data, it just describes a section of an
+underlying array. Changing the elements of a slice modifies the
+corresponding elements of its underlying array. <strong>Other slices
+that share the same underlying array will see those
+changes</strong>.</li>
+<li>Slicing a slice changes pointers of the underlying array, so it is
+as efficient as manipulating array indices, size and capacity of the new
+slice are changed too.</li>
+<li>Example usage: <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">names := [<span class="number">4</span>]<span class="type">string</span>&#123;<span class="string">&quot;John&quot;</span>,<span class="string">&quot;Paul&quot;</span>,<span class="string">&quot;George&quot;</span>,<span class="string">&quot;Ringo&quot;</span>,&#125;</span><br><span class="line">fmt.Println(names)   <span class="comment">//[John Paul George Ringo]</span></span><br><span class="line">a := names[<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line">b := names[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">fmt.Println(a, b)    <span class="comment">//[John Paul] [Paul George]</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="string">&quot;XXX&quot;</span></span><br><span class="line">fmt.Println(a, b)    <span class="comment">//[John XXX] [XXX George] </span></span><br><span class="line">fmt.Println(names)   <span class="comment">//[John XXX George Ringo]</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="difference-between-slice-and-array">Difference between slice and
+array</h4>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//This is an array literal:</span></span><br><span class="line">[<span class="number">3</span>]<span class="type">bool</span>&#123;<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//And this creates the same array as above, then builds a slice that references it:</span></span><br><span class="line">[]<span class="type">bool</span>&#123;<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="iterating-over-slice">Iterating over slice</h4>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, v := <span class="keyword">range</span> arr &#123;	<span class="comment">//do stuff &#125;</span></span><br><span class="line"><span class="keyword">for</span> _, v := <span class="keyword">range</span> arr &#123;	<span class="comment">//do stuff &#125;</span></span><br><span class="line"><span class="keyword">for</span> i, _ := <span class="keyword">range</span> arr &#123;	<span class="comment">//do stuff &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="map">Map</h2>
+<p>Map format: <code>map[k]v</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span> &#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ccmouse&quot;</span>,</span><br><span class="line">  <span class="string">&quot;course&quot;</span>: <span class="string">&quot;golang&quot;</span>,</span><br><span class="line">  <span class="string">&quot;site&quot;</span>, <span class="string">&quot;imooc&quot;</span>,</span><br><span class="line">  <span class="string">&quot;quality&quot;</span>: <span class="string">&quot;notbad&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="create-a-map">Create a map</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// m2 == empty map</span></span><br><span class="line">m2 := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>)</span><br><span class="line"><span class="comment">// initialize the space</span></span><br><span class="line">m2 := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="traversing-the-map-using-range">Traversing the map (using
+range)</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v := <span class="keyword">range</span> m &#123;</span><br><span class="line">  fmt.Println(k, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="get-element">Get Element</h3>
+<p>Unlike Python when accessing non-exist key, it will pop exceptions,
+Go will not, and it will return two values on accessing the value
+through keys, 1) the value itself, and 2) a bool of whether the element
+exists <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ok will be whether the key exists</span></span><br><span class="line">courseName, ok := m1[<span class="string">&quot;course&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> courseName, ok := m1[<span class="string">&quot;course&quot;</span>]; ok &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;causeName&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;key does not exist&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="delete-element">Delete Element</h3>
+<p>The delete() function is a direct and effective way to eliminate a
+key−value pair from a map. By specifying the key to delete, you can
+promptly remove the corresponding data from the map. <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  delete(mapName, key)</span></span><br><span class="line">name, ok := m[<span class="string">&quot;name&quot;</span>]</span><br><span class="line"><span class="built_in">delete</span>(m, <span class="string">&quot;name&quot;</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="maps-key">Map's Key</h3>
+<ul>
+<li>Map uses hashmap as its data structure, so other than
+<strong>slice</strong>, <strong>map</strong>, <strong>function</strong>,
+other type can be used as keys.</li>
+<li>Sturct data without <strong>slice</strong>, <strong>map</strong> and
+<strong>function</strong> can also be the key</li>
+</ul>
+<h2 id="functions-in-go">Functions in Go</h2>
+<h3 id="typical-function">Typical Function</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return void</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x <span class="type">int</span>, y <span class="type">int</span>)</span></span>  &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------arguments-----return------</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x <span class="type">int</span>, y <span class="type">int</span>)</span></span>  <span class="type">int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-----same type arguments-----------</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x, y <span class="type">int</span>)</span></span>  <span class="type">int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="multiple-returns">Multiple Returns</h3>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swap</span><span class="params">(x, y <span class="type">string</span>)</span></span> (<span class="type">string</span>, <span class="type">string</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> y, x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//in main</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	a, b := swap(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>)</span><br><span class="line">	fmt.Println(a, b) <span class="comment">//prints &quot;world hello&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="named-returns">Named Returns</h3>
+<p>You can declare return variables and name them at the beginning, they
+are returned in the end. <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Returns x,y at the end.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">split</span><span class="params">(sum <span class="type">int</span>)</span></span> (x, y <span class="type">int</span>) &#123;</span><br><span class="line">    x = sum * <span class="number">4</span> / <span class="number">9</span></span><br><span class="line">    y = sum - x</span><br><span class="line">    <span class="comment">// by default, it returns x and y</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    <span class="comment">//return a,b  &lt;- u can override default return of x,y.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="variadic-functions">Variadic Functions</h3>
+<p>The rightmost argument can be a list of variable size
+(<em>slice</em>) of data. <code>...</code> three dots means you are
+passing a variable size of data <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">average</span><span class="params">(x <span class="type">int</span>, values ...<span class="type">int</span>)</span></span> <span class="type">float64</span> &#123;</span><br><span class="line">    <span class="comment">//print values</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Single argument value: &quot;</span>, x)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Variable argument values: &quot;</span>, values)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//calculate average</span></span><br><span class="line">    total := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, value := <span class="keyword">range</span> values &#123;</span><br><span class="line">      total += value</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="type">float64</span>(total) / <span class="type">float64</span>(<span class="built_in">len</span>(values))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    avg := average(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>)</span><br><span class="line">    <span class="built_in">println</span>(<span class="string">&quot;Average:&quot;</span>, avg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="defer-keyword">Defer Keyword</h3>
+<p><code>Defer</code> used before a functions executes the function at
+the end of the scope of it.</p>
+<ul>
+<li>usually used to close opened files/buffers so you open the file and
+closes it using defer in the next line to keep things clean.</li>
+<li>they're executed as a <strong>stack</strong>. <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">&quot;One&quot;</span>)</span><br><span class="line"><span class="keyword">defer</span> fmt.Println(<span class="string">&quot;Four&quot;</span>)</span><br><span class="line"><span class="keyword">defer</span> fmt.Println(<span class="string">&quot;Three&quot;</span>)</span><br><span class="line">fmt.Println(<span class="string">&quot;Two&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//Prints One Two Three Four</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="type-function-and-returning-functions">Type Function and
+Returning Functions</h3>
+<ol type="1">
+<li>Functions can be assigned to variables
+<code>func0 := func() int &#123;x++; return x&#125;</code></li>
+<li>Functions that are returned from another functions has its own scope
+per returned function <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">incrementGlobalX</span><span class="params">()</span></span> <span class="type">int</span>  &#123;</span><br><span class="line">  x++</span><br><span class="line">  <span class="keyword">return</span> x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">wrapper</span><span class="params">()</span></span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">  x := <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    x++</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fn := wrapper()</span><br><span class="line">	fmt.Print(wrapper())</span><br><span class="line">    fmt.Print(wrapper())</span><br><span class="line">    <span class="comment">// print 12</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">//local x</span></span><br><span class="line">  x := <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  func0 := <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;x++; <span class="keyword">return</span> x&#125;</span><br><span class="line">  func1 := incrementGlobalX <span class="comment">//without ()</span></span><br><span class="line">  func2 := wrapper()</span><br><span class="line">  func3 := wrapper()</span><br><span class="line"></span><br><span class="line">  <span class="built_in">println</span>(func0(), <span class="string">&quot; : func0 (local x)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func1(), <span class="string">&quot; : func1 (global x)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func2(), <span class="string">&quot; : func2 (per func scope x1)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func3(), <span class="string">&quot; : func3 (per func scope x2)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(<span class="string">&quot;Second Increment&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func0(), <span class="string">&quot; : func0 (local x)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func1(), <span class="string">&quot; : func1 (global x)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func2(), <span class="string">&quot; : func2 (per func scope x1)&quot;</span>)</span><br><span class="line">  <span class="built_in">println</span>(func3(), <span class="string">&quot; : func3 (per func scope x2)&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">incrementGlobalX</span><span class="params">()</span></span> <span class="type">int</span>  &#123;</span><br><span class="line">  x++</span><br><span class="line">  <span class="keyword">return</span> x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">wrapper</span><span class="params">()</span></span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">  x := <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    x++</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="receiver">Receiver</h3>
+<p>Receiver is the way you create a method for a specific type/struct
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> rect <span class="keyword">struct</span> &#123;</span><br><span class="line">    width, height <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// (r *rect) is called rceiver</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *rect)</span></span> area() <span class="type">int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> r.width * r.height</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">r := rect&#123;<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">areaX := r.area()</span><br><span class="line">fmt.Println(areaX)</span><br></pre></td></tr></table></figure></p>
+<h2 id="pointers">Pointers</h2>
+<p>Similar to C/C++ <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value <span class="type">int</span> = <span class="number">1000</span></span><br><span class="line"><span class="keyword">var</span> pointer *<span class="type">int</span> = &amp;value</span><br><span class="line"><span class="built_in">println</span>(value)                	<span class="comment">//1000</span></span><br><span class="line"><span class="built_in">println</span>(pointer)              	<span class="comment">//0xfffffffff</span></span><br><span class="line"><span class="built_in">println</span>(*pointer)             	<span class="comment">//1000</span></span><br><span class="line">(*pointer)++		  			<span class="comment">//1001</span></span><br><span class="line">*pointer = *pointer + <span class="number">10</span>	    <span class="comment">//1011</span></span><br><span class="line"><span class="built_in">println</span>(*pointer)				<span class="comment">//1011</span></span><br><span class="line"><span class="built_in">println</span>(*pointer + *pointer)  	<span class="comment">//1011 + 1011 = 2022</span></span><br></pre></td></tr></table></figure></p>
+<p>Difference?</p>
+<ol type="1">
+<li>Pointer cannot do arithmetic calculation: you can change what
+pointer points to, but you cannot change the pointer itself</li>
+</ol>
+<h2 id="pass-by-value-pass-by-reference">Pass by value &amp; Pass by
+reference</h2>
+<ol type="1">
+<li>Every thing is passed by value except <strong>arrays, slices, maps
+and channels</strong> which some calls r<strong>eference types</strong>,
+these types are passed by reference ( they internally have pointers, so
+no copying of the actual data happens when passing them) .</li>
+<li>Unlike C, where the address of a local variable will be recollected
+after the function returns, it's perfectly OK to return the address of a
+local variable (like Java); the storage associated with the variable
+survives after the function returns.</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<ol type="1">
+<li>https://github.com/sherifabdlnaby/Golang-study-notes</li>
+<li>Coursera - Functions, Methods, and Interfaces in Go, University of
+California, Irvine.</li>
+<li>慕课网 Google资深工程师深度讲解Go语言 由浅入深掌握Go语言</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Go Programming Languages - Fundamentals</p><p><a href="http://tragicmaster.github.io/wiki/程序语言/Go/Go_fundamentals/">http://tragicmaster.github.io/wiki/程序语言/Go/Go_fundamentals/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Tragic Master</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-04-28</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-04-28</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="external nofollow noopener noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="external nofollow noopener noreferrer" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="external nofollow noopener noreferrer" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Go/">Go</a></div><div class="bdsharebuttonbox"><a class="bds_more" href="#" data-cmd="more"></a><a class="bds_qzone" href="#" data-cmd="qzone" title="分享到QQ空间"></a><a class="bds_tsina" href="#" data-cmd="tsina" title="分享到新浪微博"></a><a class="bds_tqq" href="#" data-cmd="tqq" title="分享到腾讯微博"></a><a class="bds_renren" href="#" data-cmd="renren" title="分享到人人网"></a><a class="bds_weixin" href="#" data-cmd="weixin" title="分享到微信"></a></div><script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_object/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Go Programming Languages - OOP</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/"><span class="level-item">COMP3052 Computer Security 5 -- Firewall</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpg" alt="Tragic Master"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Tragic Master</p><p class="is-size-6 is-block">Duke ECE 25&#039; | Nottingham CSAI 23&#039;</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Durham, North Carolina</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Jerry20000730" target="_blank" rel="external nofollow noopener noreferrer">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/Jerry20000730"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Linkedin" href="https://linkedin.com/in/fangcheng-guo-personal"><i class="fab fa-linkedin"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://leetcode.cn" target="_blank" rel="external nofollow noopener noreferrer"><span class="level-left"><span class="level-item">Leetcode</span></span><span class="level-right"><span class="level-item tag">leetcode.cn</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/COMP3052-Computer-Security/"><span class="level-start"><span class="level-item">COMP3052 Computer Security</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/COMP3056-Computer-Vision/"><span class="level-start"><span class="level-item">COMP3056 Computer Vision</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/MySQL/"><span class="level-start"><span class="level-item">MySQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OA/"><span class="level-start"><span class="level-item">OA</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Programming-Languages/"><span class="level-start"><span class="level-item">Programming Languages</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="level-start"><span class="level-item">环境配置</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2025-03-08T12:14:25.550Z">2025-03-08</time></p><p class="title"><a href="/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_extra/">Go Programming Languages - Extra Settings</a></p><p class="categories"><a href="/categories/Programming-Languages/">Programming Languages</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-10-27T21:51:49.000Z">2024-10-28</time></p><p class="title"><a href="/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/CICD/">CICD流水线搭建流程 [GitLab + Ubuntu]</a></p><p class="categories"><a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-10-27T07:00:47.000Z">2024-10-27</time></p><p class="title"><a href="/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/SSLBuild/">部署SSL证书</a></p><p class="categories"><a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-10-22T05:19:22.000Z">2024-10-22</time></p><p class="title"><a href="/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/longest-palindrome/">最长回文子串问题的解法</a></p><p class="categories"><a href="/categories/Algorithm/">Algorithm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-09-03T13:21:01.000Z">2024-09-03</time></p><p class="title"><a href="/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_goroutine/">Go Programming Languages - Goroutines</a></p><p class="categories"><a href="/categories/Programming-Languages/">Programming Languages</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/"><span class="level-start"><span class="level-item">2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Algorithm/"><span class="tag">Algorithm</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-Multithreading/"><span class="tag">C++ Multithreading</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-singleton/"><span class="tag">C++ singleton</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CICD/"><span class="tag">CICD</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/COMP3052-Computer-Security/"><span class="tag">COMP3052 Computer Security</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/COMP3056-Computer-Vision/"><span class="tag">COMP3056 Computer Vision</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Go/"><span class="tag">Go</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Nginx/"><span class="tag">Nginx</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSL/"><span class="tag">SSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Screen/"><span class="tag">Screen</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tencent/"><span class="tag">Tencent</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/welcome/"><span class="tag">welcome</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo1.svg" alt="Tragic Master&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2025 Tragic Master</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a></p><p class="is-size-7">Tragic Master</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>COMP3052 Computer Security 5 -- Firewall - Tragic Master&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Tragic Master&#039;s Blog"><meta name="msapplication-TileImage" content="img/favicon3.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tragic Master&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="A firewall is a network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules"><meta property="og:type" content="blog"><meta property="og:title" content="COMP3052 Computer Security 5 -- Firewall"><meta property="og:url" content="http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/"><meta property="og:site_name" content="Tragic Master&#039;s Blog"><meta property="og:description" content="A firewall is a network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://tragicmaster.github.io/images/CS/Part5/cover.jpeg"><meta property="article:published_time" content="2024-03-31T20:54:51.000Z"><meta property="article:modified_time" content="2024-03-31T20:54:51.000Z"><meta property="article:author" content="Tragic Master"><meta property="article:tag" content="COMP3052 Computer Security"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://tragicmaster.github.io/images/CS/Part5/cover.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/"},"headline":"COMP3052 Computer Security 5 -- Firewall","image":[],"datePublished":"2024-03-31T20:54:51.000Z","dateModified":"2024-03-31T20:54:51.000Z","author":{"@type":"Person","name":"Tragic Master"},"publisher":{"@type":"Organization","name":"Tragic Master's Blog","logo":{"@type":"ImageObject","url":"http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/img/logo1.svg"}},"description":"A firewall is a network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules"}</script><link rel="canonical" href="http://tragicmaster.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS7/"><link rel="icon" href="/img/favicon3.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Tragic Master's Blog" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo1.svg" alt="Tragic Master&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/CS/Part5/cover.jpeg" alt="COMP3052 Computer Security 5 -- Firewall"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time datetime="2024-03-31T20:54:51.000Z" title="2024/4/1 04:54:51">2024-04-01</time></span><span class="level-item"><a class="link-muted" href="/categories/COMP3052-Computer-Security/">COMP3052 Computer Security</a></span></div></div><h1 class="title is-3 is-size-4-mobile">COMP3052 Computer Security 5 -- Firewall</h1><div class="content"><!-- toc -->
+<ul>
+<li><a href="#osi-seven-layer-model--for-reference-">OSI Seven Layer
+Model (for reference)</a></li>
+<li><a href="#firewall-brief">Firewall brief</a>
+<ul>
+<li><a href="#firewall-basic-function">Firewall Basic Function</a></li>
+<li><a href="#disadvantage-of-firewall">Disadvantage of
+Firewall</a></li>
+<li><a href="#types-of-firewall">Types of Firewall</a>
+<ul>
+<li><a href="#packet-filters">Packet Filters</a></li>
+<li><a href="#stateful--dynamic--packet-filters">Stateful (dynamic)
+Packet Filters</a></li>
+<li><a href="#proxy-servers">Proxy Servers</a></li>
+<li><a href="#nat--network-address-translation-">NAT (Network Address
+Translation)</a></li>
+<li><a href="#why-we-need-host-based-firewall-if-we-already-have-network-based-firewall-">Why
+we need host-based firewall if we already have network-based
+firewall?</a></li>
+</ul></li>
+<li><a href="#iptables--configures-firewall-in-linux-">IPTABLES
+(configures firewall in Linux)</a>
+<ul>
+<li><a href="#example-rules-for-iptables">Example rules for
+IPTABLES</a></li>
+</ul></li>
+<li><a href="#packet-filtering-policies--classification-">Packet
+Filtering Policies (classification)</a></li>
+<li><a href="#stateful-packet-filtering-policies">Stateful Packet
+Filtering Policies</a>
+<ul>
+<li><a href="#-font-color---ffa500----understand----font--new--established--related-in-iptables"><font color="#FFA500">[UNDERSTAND]</font>
+NEW, ESTABLISHED, RELATED in IPTABLES</a></li>
+</ul></li>
+<li><a href="#packet-filter-issues---drawbacks">Packet Filter Issues
+&amp; Drawbacks</a></li>
+</ul></li>
+</ul>
+<!-- tocstop -->
+<h1 id="osi-seven-layer-model-for-reference">OSI Seven Layer Model (for
+reference)</h1>
+<p><img src="/images/CS/Part5/1.png"></p>
+<h1 id="firewall-brief">Firewall brief</h1>
+<ol type="1">
+<li><p><strong>Usage</strong>: prevents unauthorised access of packets
+from one network to another.</p></li>
+<li><p><strong>Functions</strong>:</p></li>
+</ol>
+<ul>
+<li>Implements 'single point' security measures</li>
+<li>Security event monitoring through packet analysis and logging</li>
+<li>Network-based access control through implementation of a rule
+set.</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Location</strong>:</li>
+</ol>
+<ul>
+<li>Network Firewalls: placed between a subnet and the internet</li>
+<li>Host-based Firewalls: placed on individual machines</li>
+</ul>
+<ol start="4" type="1">
+<li>extended concept: <strong>DMZ</strong> (demilitarized zone)</li>
+</ol>
+<ul>
+<li>A demilitarized zone is a small subnet that separates externally
+facing services from the internal network</li>
+<li>Firewall is an implementation of DMZ</li>
+</ul>
+<h2 id="firewall-basic-function">Firewall Basic Function</h2>
+<ol type="1">
+<li>Firewall defends a protected network against parties services that
+should only be available internally (公司内网)</li>
+<li>Firewalls restrict access from inside to outside services</li>
+<li>Firewalls can perform Network Address Translation (NAT)</li>
+</ol>
+<h2 id="disadvantage-of-firewall">Disadvantage of Firewall</h2>
+<ol type="1">
+<li>Cannot protect against attacks that bypass the firewall
+(tunneling)</li>
+<li>Cannot protect against internal threats or insiders</li>
+<li>Cannot protect against the transfer of virus-infected programs or
+files</li>
+</ol>
+<h2 id="types-of-firewall">Types of Firewall</h2>
+<h3 id="packet-filters">Packet Filters</h3>
+<ul>
+<li><p>Location: layer3 (network layer) and layer4 (transport
+layer)</p></li>
+<li><p>Goal: specify which packets are allowed or dropped, based on:</p>
+<ul>
+<li>Src / Dst IP</li>
+<li>TCP/UDP port number</li>
+</ul></li>
+</ul>
+<p>The packet filter will be used for both inbound and outbound traffic,
+and achieved by examining the packet header.</p>
+<p>Example implementation of Packet Fileter in Linux:
+<strong><em>IPTABLES</em></strong></p>
+<h3 id="stateful-dynamic-packet-filters">Stateful (dynamic) Packet
+Filters</h3>
+<ul>
+<li>Stateful packet filters understand requests and replies
+<ul>
+<li>E.g. TCP open sequence (SYN, SYN-ACK, ACK) pattern</li>
+</ul></li>
+<li>Stateful packet filters can support policies for a wide range of
+protocols: TCP, FTP, IRC etc</li>
+</ul>
+<h3 id="proxy-servers">Proxy Servers</h3>
+<p>Using a proxy server to represent you to send request to the server.
+So that it can prevent unwanted connection or malicious behaviours to
+the actual web server.</p>
+<p><img src="/images/CS/Part5/proxy.png"></p>
+<p><strong>Issues:</strong></p>
+<ol type="1">
+<li><p>large overhead (send packet to the proxy server first, and then
+the target web server)</p></li>
+<li><p>more expensive than packet filtering (need a seperate proxy
+server)</p></li>
+<li><p>Configuration is complex</p></li>
+</ol>
+<h3 id="nat-network-address-translation">NAT (Network Address
+Translation)</h3>
+<ul>
+<li>background: shortage of IP address</li>
+<li>Advantage:
+<ol type="1">
+<li>machine is totally hidden from the internet</li>
+<li>only established connections are forwarded to your internal
+machine</li>
+<li>prevent unsolicited attacks on random ports</li>
+</ol></li>
+</ul>
+<h3 id="why-we-need-host-based-firewall-if-we-already-have-network-based-firewall">Why
+we need host-based firewall if we already have network-based
+firewall?</h3>
+<ul>
+<li>Background:
+<ul>
+<li>host-based firewall: firewall installed on endpoint devices: laptop,
+mobile devices, etc.,</li>
+<li>Network-based firewall: A network-based firewall is a firewall
+software installed at the network perimeter, typically <strong>between
+an organization's internal network and the Internet</strong>.</li>
+</ul></li>
+<li>Why?
+<ul>
+<li>Subnet is not secure. Attack may come from internal, not
+external</li>
+</ul></li>
+</ul>
+<h2 id="iptables-configures-firewall-in-linux">IPTABLES (configures
+firewall in Linux)</h2>
+<p><strong>Brief:</strong> - First rule to match is applied - Rules are
+organized in chains - Uses tables to store chains, matches result in a
+jump, else we check next rule - Multiple chains can exist in one
+table</p>
+<p><img src="/images/CS/Part5/iptables.png"></p>
+<h3 id="example-rules-for-iptables">Example rules for IPTABLES</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -i eth0 -p tcp --dport 80 -j DROP</span><br></pre></td></tr></table></figure>
+<p>where:</p>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-A</code></td>
+<td>Appending to specific chains</td>
+</tr>
+<tr>
+<td><code>INPUT</code></td>
+<td>Rule in INPUT chain</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>Checking incoming service request</td>
+</tr>
+<tr>
+<td><code>eth0</code></td>
+<td>Through network adapter 1</td>
+</tr>
+<tr>
+<td><code>tcp</code></td>
+<td>Rule applies to TCP protocol instead of UDP</td>
+</tr>
+<tr>
+<td><code>--dport</code></td>
+<td>Destination port (the listening port on this machine)</td>
+</tr>
+<tr>
+<td><code>-j</code></td>
+<td>Jump</td>
+</tr>
+<tr>
+<td><code>DROP</code></td>
+<td>Jump target is DROP, which means to drop all incoming request</td>
+</tr>
+</tbody>
+</table>
+<h2 id="packet-filtering-policies-classification">Packet Filtering
+Policies (classification)</h2>
+<ol type="1">
+<li><p>Permissive (Black listing) - allow everything except dangerous
+service: easy to make mistakes <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># allow all input/forward/output</span></span><br><span class="line">iptables -P INPUT/FORWARD/OUTPUT ACCEPT</span><br><span class="line"><span class="comment"># but restrict incoming connection to the machine ssh services</span></span><br><span class="line">iptables -A INPUT -p tcp --dport ssh -j DROP</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Restrictive (White listing) - block everything except designated
+useful services: secure, but easy to DoS yourself <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># drop all input/forward/output</span></span><br><span class="line">iptables -P INPUT/FORWARD/OUTPUT DROP</span><br><span class="line"><span class="comment"># allow outgoing SSH traffic </span></span><br><span class="line">iptables -A OUTPUT -p tcp --dport ssh -j ACCEPT</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="stateful-packet-filtering-policies">Stateful Packet Filtering
+Policies</h2>
+<p>IPTABLES has modules for stateful packet filtering</p>
+<ul>
+<li>Allow incoming / outgoing SSH connections <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW, ESTABLISHED -j ACCEPT</span><br><span class="line">iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state NEW, ESTABLISHED -j ACCEPT</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="understand-new-established-related-in-iptables"><font color="#FFA500">[UNDERSTAND]</font>
+NEW, ESTABLISHED, RELATED in IPTABLES</h3>
+<ul>
+<li><strong>NEW</strong> — A packet requesting a new connection, such as
+an HTTP request.</li>
+<li><strong>ESTABLISHED</strong> — A packet that is part of an existing
+connection.</li>
+<li><strong>RELATED</strong> — A packet that is requesting a new
+connection but is part of an existing connection.</li>
+</ul>
+<h2 id="packet-filter-issues-drawbacks">Packet Filter Issues &amp;
+Drawbacks</h2>
+<ol type="1">
+<li>Cannot prevent attacks that exploit application-specific
+vulnerabilities</li>
+<li>Cannot support higher-level authentication schemes</li>
+<li>Easy to accidentally allow or deny packets incorrectly</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>COMP3052 Computer Security 5 -- Firewall</p><p><a href="http://tragicmaster.github.io/wiki/Lecture Note/COMP3052 Computer Security/CS7/">http://tragicmaster.github.io/wiki/Lecture Note/COMP3052 Computer Security/CS7/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Tragic Master</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-04-01</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-04-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="external nofollow noopener noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="external nofollow noopener noreferrer" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="external nofollow noopener noreferrer" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/COMP3052-Computer-Security/">COMP3052 Computer Security</a></div><div class="bdsharebuttonbox"><a class="bds_more" href="#" data-cmd="more"></a><a class="bds_qzone" href="#" data-cmd="qzone" title="分享到QQ空间"></a><a class="bds_tsina" href="#" data-cmd="tsina" title="分享到新浪微博"></a><a class="bds_tqq" href="#" data-cmd="tqq" title="分享到腾讯微博"></a><a class="bds_renren" href="#" data-cmd="renren" title="分享到人人网"></a><a class="bds_weixin" href="#" data-cmd="weixin" title="分享到微信"></a></div><script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_fundamentals/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Go Programming Languages - Fundamentals</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/tencent/"><span class="level-item">腾讯2024暑期实习笔试</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpg" alt="Tragic Master"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Tragic Master</p><p class="is-size-6 is-block">Duke ECE 25&#039; | Nottingham CSAI 23&#039;</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Durham, North Carolina</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Jerry20000730" target="_blank" rel="external nofollow noopener noreferrer">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/Jerry20000730"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Linkedin" href="https://linkedin.com/in/fangcheng-guo-personal"><i class="fab fa-linkedin"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://leetcode.cn" target="_blank" rel="external nofollow noopener noreferrer"><span class="level-left"><span class="level-item">Leetcode</span></span><span class="level-right"><span class="level-item tag">leetcode.cn</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/COMP3052-Computer-Security/"><span class="level-start"><span class="level-item">COMP3052 Computer Security</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/COMP3056-Computer-Vision/"><span class="level-start"><span class="level-item">COMP3056 Computer Vision</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/MySQL/"><span class="level-start"><span class="level-item">MySQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/OA/"><span class="level-start"><span class="level-item">OA</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Programming-Languages/"><span class="level-start"><span class="level-item">Programming Languages</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="level-start"><span class="level-item">环境配置</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2025-03-08T12:14:25.550Z">2025-03-08</time></p><p class="title"><a href="/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_extra/">Go Programming Languages - Extra Settings</a></p><p class="categories"><a href="/categories/Programming-Languages/">Programming Languages</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-10-27T21:51:49.000Z">2024-10-28</time></p><p class="title"><a href="/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/CICD/">CICD流水线搭建流程 [GitLab + Ubuntu]</a></p><p class="categories"><a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-10-27T07:00:47.000Z">2024-10-27</time></p><p class="title"><a href="/wiki/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/SSLBuild/">部署SSL证书</a></p><p class="categories"><a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-10-22T05:19:22.000Z">2024-10-22</time></p><p class="title"><a href="/wiki/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/longest-palindrome/">最长回文子串问题的解法</a></p><p class="categories"><a href="/categories/Algorithm/">Algorithm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-09-03T13:21:01.000Z">2024-09-03</time></p><p class="title"><a href="/wiki/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/Go_goroutine/">Go Programming Languages - Goroutines</a></p><p class="categories"><a href="/categories/Programming-Languages/">Programming Languages</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/"><span class="level-start"><span class="level-item">2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Algorithm/"><span class="tag">Algorithm</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-Multithreading/"><span class="tag">C++ Multithreading</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-singleton/"><span class="tag">C++ singleton</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CICD/"><span class="tag">CICD</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/COMP3052-Computer-Security/"><span class="tag">COMP3052 Computer Security</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/COMP3056-Computer-Vision/"><span class="tag">COMP3056 Computer Vision</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Go/"><span class="tag">Go</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Nginx/"><span class="tag">Nginx</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSL/"><span class="tag">SSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Screen/"><span class="tag">Screen</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tencent/"><span class="tag">Tencent</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/welcome/"><span class="tag">welcome</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo1.svg" alt="Tragic Master&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2025 Tragic Master</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a></p><p class="is-size-7">Tragic Master</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
