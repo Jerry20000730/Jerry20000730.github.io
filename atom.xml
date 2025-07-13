@@ -6,7 +6,7 @@
   <link href="https://jerry20000730.github.io/atom.xml" rel="self"/>
   
   <link href="https://jerry20000730.github.io/"/>
-  <updated>2025-04-26T16:17:02.657Z</updated>
+  <updated>2025-07-13T13:36:14.624Z</updated>
   <id>https://jerry20000730.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MIT 6.5840 Distributed System Lab1 MapReduce</title>
+    <link href="https://jerry20000730.github.io/wiki/mit5840/lab1/"/>
+    <id>https://jerry20000730.github.io/wiki/mit5840/lab1/</id>
+    <published>2025-07-13T13:32:46.325Z</published>
+    <updated>2025-07-13T13:36:14.624Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="intro">Intro</h1><p>实验是实现一个简单版本的MapReduce系统</p>]]></content>
+    
+    
+    <summary type="html">MIT 6.5840 分布式系统 Lab1 实现MapReduce 代码实现记录</summary>
+    
+    
+    
+    <category term="名校课程" scheme="https://jerry20000730.github.io/categories/%E5%90%8D%E6%A0%A1%E8%AF%BE%E7%A8%8B/"/>
+    
+    
+    <category term="Distributed System" scheme="https://jerry20000730.github.io/tags/Distributed-System/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker Hub 镜像命名规则</title>
@@ -412,27 +433,6 @@
     
     
     <category term="Tencent" scheme="https://jerry20000730.github.io/tags/Tencent/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git: How to do pre-commit</title>
-    <link href="https://jerry20000730.github.io/wiki/Git/git_tip1/"/>
-    <id>https://jerry20000730.github.io/wiki/Git/git_tip1/</id>
-    <published>2024-02-14T22:47:40.000Z</published>
-    <updated>2024-02-14T22:47:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<!-- toc --><ul><li><a href="#step1--find-git-hooks">STEP1: Find .git/hooks</a></li><li><a href="#step2--create--pre-commit--file">STEP2: Create<code>pre-commit</code> file</a></li><li><a href="#step3--edit--pre-commit--file">STEP3: edit<code>pre-commit</code> file</a></li></ul><!-- tocstop --><h2 id="step1-find-.githooks">STEP1: Find .git/hooks</h2><p>Find the hooks folder in the (hidden) .git configuration folder<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd .git/hooks</span><br></pre></td></tr></table></figure></p><h2 id="step2-create-pre-commit-file">STEP2: Create<code>pre-commit</code> file</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch pre-commit</span><br></pre></td></tr></table></figure><h2 id="step3-edit-pre-commit-file">STEP3: edit <code>pre-commit</code>file</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi pre-commit</span><br></pre></td></tr></table></figure><p>and add something like this:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">store the top level git repository path</span></span><br><span class="line">root_directory=$(git rev-parse --show-toplevel)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">list all subdirectories</span></span><br><span class="line">subdirectories=(&quot;HW1&quot;, &quot;HW2&quot;, &quot;HW3&quot;)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">iterate over each subdirectory</span></span><br><span class="line">for subdir in &quot;$(subdirectories[@])&quot;;</span><br><span class="line">do</span><br><span class="line">    (cd &quot;$root_directory/$subdir&quot; &amp;&amp; make clean)</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Continue with the commit</span></span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure><p>Now whenever you commit, it will automatically clean the subdirectoryand will not commit any executable files. Note, if the operating systemchanges, the script will also need to change.</p>]]></content>
-    
-    
-    <summary type="html">Whenever I want to commit, I always commit the object file created by C++ to the github server. This cannot be simply specified by the .gitignore file, a better way is to specify this in the pre-commit file</summary>
-    
-    
-    
-    <category term="Git" scheme="https://jerry20000730.github.io/categories/Git/"/>
-    
-    
-    <category term="git" scheme="https://jerry20000730.github.io/tags/git/"/>
     
   </entry>
   

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry20000730.github.io/wiki/mit5840/lab1/</loc>
+    
+    <lastmod>2025-07-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/wiki/Cloud-Native/docker1/</loc>
     
     <lastmod>2025-04-26</lastmod>
@@ -245,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS4/</loc>
+    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS3/</loc>
     
     <lastmod>2023-10-16</lastmod>
     
@@ -254,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS3/</loc>
+    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS4/</loc>
     
     <lastmod>2023-10-16</lastmod>
     
@@ -425,7 +434,7 @@
 
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/welcome/</loc>
+    <loc>https://jerry20000730.github.io/tags/Docker/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -439,21 +448,14 @@
   </url>
   
   <url>
+    <loc>https://jerry20000730.github.io/tags/welcome/</loc>
+    <lastmod>2025-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/tags/git/</loc>
-    <lastmod>2025-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerry20000730.github.io/tags/Docker/</loc>
-    <lastmod>2025-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerry20000730.github.io/tags/Screen/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -467,6 +469,13 @@
   </url>
   
   <url>
+    <loc>https://jerry20000730.github.io/tags/Screen/</loc>
+    <lastmod>2025-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/tags/CICD/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -474,14 +483,14 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/Hexo/</loc>
+    <loc>https://jerry20000730.github.io/tags/Nginx/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/Nginx/</loc>
+    <loc>https://jerry20000730.github.io/tags/Hexo/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -502,14 +511,21 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/C/</loc>
+    <loc>https://jerry20000730.github.io/tags/Distributed-System/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/C-singleton/</loc>
+    <loc>https://jerry20000730.github.io/tags/COMP3056-Computer-Vision/</loc>
+    <lastmod>2025-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jerry20000730.github.io/tags/C/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -523,7 +539,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/C/</loc>
+    <loc>https://jerry20000730.github.io/tags/C-singleton/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -537,20 +553,27 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/Tencent/</loc>
+    <loc>https://jerry20000730.github.io/tags/C/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/COMP3056-Computer-Vision/</loc>
+    <loc>https://jerry20000730.github.io/tags/Tencent/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
 
+  
+  <url>
+    <loc>https://jerry20000730.github.io/categories/Cloud-Native/</loc>
+    <lastmod>2025-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://jerry20000730.github.io/categories/Algorithm/</loc>
@@ -567,7 +590,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/categories/Cloud-Native/</loc>
+    <loc>https://jerry20000730.github.io/categories/MySQL/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -575,13 +598,6 @@
   
   <url>
     <loc>https://jerry20000730.github.io/categories/Linux/</loc>
-    <lastmod>2025-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerry20000730.github.io/categories/MySQL/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -602,6 +618,20 @@
   </url>
   
   <url>
+    <loc>https://jerry20000730.github.io/categories/%E5%90%8D%E6%A0%A1%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2025-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jerry20000730.github.io/categories/COMP3056-Computer-Vision/</loc>
+    <lastmod>2025-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/categories/Programming-Languages/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -610,13 +640,6 @@
   
   <url>
     <loc>https://jerry20000730.github.io/categories/OA/</loc>
-    <lastmod>2025-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerry20000730.github.io/categories/COMP3056-Computer-Vision/</loc>
     <lastmod>2025-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
