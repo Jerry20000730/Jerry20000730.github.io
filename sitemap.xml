@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry20000730.github.io/wiki/%E6%96%B9%E6%A1%88/home_network_setting/</loc>
+    
+    <lastmod>2025-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/wiki/duke-ece560-pdf-hw5/</loc>
     
     <lastmod>2025-09-07</lastmod>
@@ -299,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS4/</loc>
+    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS3/</loc>
     
     <lastmod>2023-10-16</lastmod>
     
@@ -308,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS3/</loc>
+    <loc>https://jerry20000730.github.io/wiki/Lecture%20Note/COMP3052%20Computer%20Security/CS4/</loc>
     
     <lastmod>2023-10-16</lastmod>
     
@@ -486,6 +495,13 @@
   </url>
   
   <url>
+    <loc>https://jerry20000730.github.io/tags/Algorithm/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/tags/welcome/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -507,7 +523,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/Algorithm/</loc>
+    <loc>https://jerry20000730.github.io/tags/Screen/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -521,14 +537,14 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/Screen/</loc>
+    <loc>https://jerry20000730.github.io/tags/Distributed-System/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/Hexo/</loc>
+    <loc>https://jerry20000730.github.io/tags/Network/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -542,21 +558,14 @@
   </url>
   
   <url>
+    <loc>https://jerry20000730.github.io/tags/Hexo/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/tags/CICD/</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerry20000730.github.io/tags/SSL/</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerry20000730.github.io/tags/Distributed-System/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -570,7 +579,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/tags/COMP3056-Computer-Vision/</loc>
+    <loc>https://jerry20000730.github.io/tags/SSL/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -592,6 +601,13 @@
   
   <url>
     <loc>https://jerry20000730.github.io/tags/C-singleton/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jerry20000730.github.io/tags/COMP3056-Computer-Vision/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -628,6 +644,13 @@
   </url>
   
   <url>
+    <loc>https://jerry20000730.github.io/categories/Algorithm/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerry20000730.github.io/categories/Cloud-Native/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -642,7 +665,7 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/categories/Algorithm/</loc>
+    <loc>https://jerry20000730.github.io/categories/Linux/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -656,7 +679,14 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/categories/Linux/</loc>
+    <loc>https://jerry20000730.github.io/categories/%E5%90%8D%E6%A0%A1%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jerry20000730.github.io/categories/%E5%AE%B6%E4%B8%AD%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -670,13 +700,6 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/categories/%E5%90%8D%E6%A0%A1%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jerry20000730.github.io/categories/COMP3052-Computer-Security/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -684,14 +707,14 @@
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/categories/COMP3056-Computer-Vision/</loc>
+    <loc>https://jerry20000730.github.io/categories/Programming-Languages/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jerry20000730.github.io/categories/Programming-Languages/</loc>
+    <loc>https://jerry20000730.github.io/categories/COMP3056-Computer-Vision/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
